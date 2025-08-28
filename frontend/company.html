@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>同業比較分析</title>
+</head>
+<body id="page-top">
+<div id="wrapper" class="d-flex">
+  <!-- Sidebar 由 main.js 插入 -->
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div id="topbar-placeholder"></div>
+
+      <div class="container page-body py-4">
+        <div class="apple-card">
+          <h2 class="page-title mb-4">同業比較分析</h2>
+
+          <!-- 參數區 -->
+          <div id="params" class="mb-3">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="symbols" class="form-label">股票代碼（可複選）</label>
+                <select id="symbols" class="form-select" multiple>
+                  <option value="AAPL" selected>AAPL</option>
+                  <option value="MSFT" selected>MSFT</option>
+                  <option value="AMZN" selected>AMZN</option>
+                  <option value="GOOGL" selected>GOOGL</option>
+                  <option value="TSLA" selected>TSLA</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="from" class="form-label">起</label>
+                <input id="from" type="text" class="form-control" placeholder="請輸入日期..." />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="to" class="form-label">迄</label>
+                <input id="to" type="text" class="form-control" placeholder="請輸入日期..." />
+              </div>
+            </div>
+          </div>
+
+          <div class="actions d-flex gap-2 mb-3">
+            <button id="queryBtn" class="btn btn-primary mr-2">查詢</button>
+            <button data-export="csv"  class="btn btn-primary mr-2">下載 CSV</button>
+            <button data-export="xlsx" class="btn btn-primary mr-2">下載 XLSX</button>
+            <button data-export="pdf"  class="btn btn-primary">下載 PDF</button>
+          </div>
+          
+          <button id="btn-ai-gemini-news" class="btn btn-outline-primary"> AI 時事解讀</button>
+          <p class="form-text text-muted">註：僅支援近一個月新聞，超過則僅提供 AI 數據分析</p>
+          <div id="ai-panel" class="mt-3 d-none"></div>
+
+          <!-- 表格 -->
+          <div class="card-table-wrap">
+          <div id="peers-table"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 頁面腳本 -->
+<script type="module" src="/src/company.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

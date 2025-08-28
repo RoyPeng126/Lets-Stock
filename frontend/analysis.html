@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>市場技術分析</title>
+</head>
+<body id="page-top">
+<div id="wrapper" class="d-flex">
+  <!-- Sidebar 由 main.js 插入 -->
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div id="topbar-placeholder"></div>
+
+      <div class="container page-body py-4">
+        <div class="apple-card">
+          <h2 class="page-title mb-4">市場技術分析</h2>
+
+          <!-- 條件列 -->
+          <div class="row g-3 mb-3">
+            <div class="col-12 col-md-4">
+              <label for="symbol" class="form-label">股票代碼</label>
+              <input id="symbol" class="form-control" placeholder="AAPL" />
+            </div>
+            <div class="col-12 col-md-4">
+              <label for="from" class="form-label">起</label>
+              <input id="from" type="date" class="form-control" />
+            </div>
+            <div class="col-12 col-md-4">
+              <label for="to" class="form-label">迄</label>
+              <input id="to" type="date" class="form-control" />
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <button id="queryBtn" class="btn btn-primary">查詢</button>
+          </div>
+
+          <!-- 圖表 -->
+          <h6 class="section-title">K 線</h6>
+          <div id="chart-main" class="chart-box" style="height:460px;"></div>
+
+          <h6 class="section-title mt-4">RSI(14)</h6>
+          <div id="chart-rsi" class="chart-box chart-box--sm" style="height:220px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 與其他頁一致 -->
+<script type="module" src="/src/analysis.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
+

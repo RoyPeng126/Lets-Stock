@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow topbar topbar-apple">
+  <!-- 左：Logo -->
+  <a class="navbar-brand d-flex align-items-center sidebar-brand" href="#">
+    <span class="ml-2">Let's Stock</span>
+  </a>
+
+  <!-- 手機版漢堡 -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNavbar">
+    <!-- 中：主選單（由原 sidebar 搬上來） -->
+    <ul class="navbar-nav mr-auto">
+
+      <!-- 報表與分析 -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="menuReportCenter" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        報表分析
+        </a>
+        <div class="dropdown-menu" aria-labelledby="menuReportCenter">
+          <a class="dropdown-item" href="/analysis.html">市場技術分析</a>
+          <a class="dropdown-item" href="/company.html">同業比較分析</a>
+        </div>
+      </li>
+
+            <!-- 追蹤管理 -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="menuTracking" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        收益模擬
+        </a>
+        <div class="dropdown-menu" aria-labelledby="menuTracking">
+          <a class="dropdown-item" href="/portfolio.html">投組模擬</a>
+          <a class="dropdown-item" href="/dca.html">定期定額</a>
+        </div>
+      </li>
+      
+      <!-- 報表查詢（單頁） -->
+      <li class="nav-item">
+        <a class="nav-link" href="/report.html">
+        報表查詢
+        </a>
+      </li>
+    </ul>
+      <div id="topnav-marquee" class="nav-marquee"
+       data-symbols="AAPL,MSFT,AMZN,GOOGL,TSLA"></div>
+    <li class="nav-item d-flex align-items-center ml-2">
+  <span id="topbar-clock" class="topbar-clock">--:--:--</span>
+</li>
+
+    <!-- 右：搜尋 -->
+    <form class="d-none d-sm-inline-block form-inline mr-3 navbar-search">
+      <div class="input-group">
+        <input type="text" class="form-control bg-light border-0 small" placeholder="搜尋功能...">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button"><i class="fas fa-search fa-sm"></i></button>
+        </div>
+      </div>
+    </form>
+    
+    <!-- 右：通知 / 使用者 -->
+    <ul class="navbar-nav">
+      <!-- 通知 -->
+           <ul class="navbar-nav mr-auto">
+      <li class="nav-item d-flex align-items-center ml-2">
+          <button id="themeToggle" class="btn btn-sm btn-outline-secondary rounded-pill" aria-label="切換深色模式">
+            <i id="themeToggleIcon" class="bi bi-moon"></i>
+          </button>
+      </li>
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell fa-fw" style="color:black";></i>
+          <span id="notifBadge" class="badge badge-danger badge-counter d-none"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="alertsDropdown" style="min-width:20rem;">
+          <div id="notifContainer">
+            <a class="dropdown-item text-center small text-gray-500">暫無通知</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- 使用者 -->
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="topbar-username">使用者</span>
+          <img class="img-profile rounded-circle" src="/sbadmin2/img/undraw_profile.svg">
+          <span id="debug-indicator" class="badge badge-danger ml-2" style="display:none;">DEBUG MODE</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="../../profile.html"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 個人資料</a>
+          <a class="dropdown-item" href="#" id="logoutButton"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> 登出</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<link href="/sbadmin2/fontawesome-free/css/all.min.css" rel="stylesheet"/>

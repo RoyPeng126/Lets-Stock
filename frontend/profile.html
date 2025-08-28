@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>個人資料</title>
+</head>
+<body id="page-top">
+<div id="wrapper">
+  <!-- Sidebar 由 main.js 插入 -->
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div id="topbar-placeholder"></div>
+
+      <!-- 統一使用 apple 版面 -->
+      <div class="container page-body py-4">
+        <div class="apple-card">
+          <h2 class="page-title mb-4">個人資料</h2>
+
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th scope="row">姓名</th>
+                  <td id="profile-name"></td>
+                </tr>
+                <tr>
+                  <th scope="row">帳號</th>
+                  <td id="profile-account"></td>
+                </tr>
+                <tr>
+                  <th scope="row">目前時區</th>
+                  <td id="profile-timezone"></td>
+                </tr>
+                <tr>
+                  <th scope="row">目前 IP</th>
+                  <td id="profile-ip"></td>
+                </tr>
+                <!-- 公司改成一整欄（跨兩格）-->
+                <tr>
+                  <td id="profile-company-full" colspan="2"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="footer-placeholder"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/src/profile.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

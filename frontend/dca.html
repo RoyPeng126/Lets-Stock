@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"/>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>定期定額</title>
+</head>
+<body id="page-top">
+<div id="wrapper" class="d-flex">
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div id="topbar-placeholder"></div>
+
+      <div class="container page-body py-4">
+        <div class="apple-card">
+          <h2 class="page-title mb-4">定期定額</h2>
+
+          <div class="row g-3 mb-3">
+            <div class="col-12">
+              <label class="form-label" for="symbols">股票（可複選，平均分配資金）</label>
+              <select id="symbols" class="form-select" multiple>
+                <option value="AAPL" selected>AAPL</option>
+                <option value="MSFT" selected>MSFT</option>
+                <option value="AMZN">AMZN</option>
+                <option value="GOOGL">GOOGL</option>
+                <option value="TSLA">TSLA</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label" for="amount">每期投入金額</label>
+              <input id="amount" type="number" class="form-control" value="1000"/>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label" for="freq">頻率</label>
+              <select id="freq" class="form-select">
+                <option value="weekly" selected>每週</option>
+                <option value="monthly">每月</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label" for="day">週/月份日</label>
+              <input id="day" type="number" class="form-control" value="1" min="1" max="31"/>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label for="from" class="form-label">起</label>
+              <input id="from" type="text" class="form-control" placeholder="請輸入日期..." />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="to" class="form-label">迄</label>
+              <input id="to" type="text" class="form-control" placeholder="請輸入日期..." />
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mb-3">
+            <button id="simulateBtn" class="btn btn-primary">模擬</button>
+          </div>
+
+          <div id="dca-metrics" class="row g-3"></div>
+          <div id="chart-dca" style="height:360px;margin-top:16px;"></div>
+
+          <h5 class="mt-4 mb-2">投入明細</h5>
+          <div class="card-table-wrap">
+          <div id="dca-table"></div></div>
+        </div>
+
+        <div id="loadingOverlay" class="position-fixed top-0 start-0 w-100 h-100 d-none bg-light bg-opacity-50 text-center" style="z-index:9999;padding-top:20%;">
+          <div class="spinner-border text-primary" role="status"></div>
+          <div class="mt-3 fs-5">運算中，請稍候...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/src/dca.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

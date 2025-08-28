@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登入 Let's Stock</title>
+
+  <style>
+    :root{
+      --apple-bg:#f5f5f7;
+      --apple-text:#1d1d1f;
+      --apple-muted:#6e6e73;
+      --radius:16px;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--apple-bg);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji",sans-serif;
+      color:var(--apple-text);
+    }
+
+    .auth-shell{ min-height:100vh; display:grid; place-items:center; padding:24px; }
+    .auth-wrap{
+      display:grid; grid-template-columns: 1.1fr 1fr;
+      max-width:980px; width:100%; background:#fff;
+      border:1px solid rgba(0,0,0,.08); border-radius: var(--radius);
+      box-shadow:0 12px 40px rgba(0,0,0,.08); overflow:hidden;
+    }
+    .auth-hero{ min-height:360px; background:#fff; }
+    .auth-body{ padding:40px 36px; }
+    .title{ font-size:28px; font-weight:800; letter-spacing:-.2px; margin:0 0 8px; }
+    .subtitle{ font-weight:600; color:var(--apple-muted); margin:0 0 24px; }
+
+    .form-row{ display:grid; gap:12px; margin-bottom:12px; }
+    .apple-input{
+      width:100%; height:44px; border:1px solid rgba(0,0,0,.15); border-radius:12px;
+      padding:0 14px; background:#fff; color:var(--apple-text); outline:none;
+      transition:border-color .15s ease, box-shadow .15s ease;
+    }
+    .apple-input::placeholder{ color:#9aa0a6; }
+    .apple-input:focus{ border-color:#111; box-shadow:0 0 0 3px rgba(0,0,0,.08); }
+
+    .apple-check{ display:flex; align-items:center; gap:8px; font-size:14px; color:var(--apple-text); margin:6px 0 4px; }
+    .apple-check input{ width:16px; height:16px; }
+
+    .apple-btn{
+      width:100%; height:44px; border-radius:12px; background:#111; color:#fff; border:1px solid #111;
+      font-weight:600; cursor:pointer; transition:filter .15s ease, transform .02s ease;
+    }
+    .apple-btn:hover{ filter:brightness(.95); }
+    .apple-btn:active{ transform:translateY(1px); }
+
+    #errorMsg{ color:#dc2626; margin-top:12px; text-align:center; display:none; }
+
+    @media (max-width: 1110px){
+      .auth-wrap{ grid-template-columns: 1fr; }
+      .auth-hero{ display:none; }
+      .auth-body{ padding:28px 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="auth-shell">
+    <div class="auth-wrap">
+      <div class="auth-hero" aria-hidden="true"></div>
+
+      <div class="auth-body">
+        <h1 class="title">歡迎登入</h1>
+        <p class="subtitle">Let's Stock 系統</p>
+
+        <form id="loginForm" autocomplete="on">
+          <div class="form-row">
+            <!-- 只保留帳號與密碼 -->
+            <input type="text" id="accountInput" class="apple-input"
+                   placeholder="帳號（或 email）" required />
+            <input type="password" id="passwordInput" class="apple-input"
+                   placeholder="密碼" required />
+          </div>
+
+          <label class="apple-check" for="rememberCheck">
+            <input type="checkbox" id="rememberCheck" />
+            <span>記住帳號</span>
+          </label>
+
+          <button type="submit" id="loginBtn" class="apple-btn">登入</button>
+        </form>
+
+        <div id="errorMsg" role="alert"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 登入邏輯：見 src/login.js -->
+  <script type="module" src="src/login.js"></script>
+  <link href="/sbadmin2/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Stock</title>
+  <link rel="icon" href="./favicon.ico" />
+  <style>
+    .subtitle{font-weight:600;margin-top:1rem;margin-bottom:.5rem}
+    .tech-badge{display:inline-block;padding:.15rem .5rem;border-radius:999px;background:#f3f4f6;margin:.15rem .35rem .15rem 0;font-size:.85rem}
+    .muted{color:#6b7280}
+  </style>
+</head>
+
+<body id="page-top">
+  <div id="wrapper" class="d-flex">
+    <!-- Sidebar 會由 main.js 插入這裡 -->
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- Topbar -->
+        <div id="topbar-placeholder"></div>
+
+        <!-- Page Content -->
+        <div class="container page-body py-4">
+          <div class="apple-card">
+            <h2 class="page-title mb-3">歡迎使用 Let’s Stock</h2>
+
+            <p class="muted">
+              本系統以 <b>Alpha Vantage API</b>（股價資料）、<b>GNews API（新聞）</b>與 <b>Gemini API</b>（AI 解讀）為核心，串接
+              <b>Neon（Postgres）</b> 資料庫，提供投資分析、收益模擬與報表下載的一站式體驗。
+            </p>
+
+            <div class="mb-4">
+              <div class="subtitle">功能概述</div>
+              <ul class="mb-0">
+                <li><b>報表分析</b>：技術面圖表（K 線/均線/RSI…）＋ AI 結合時事的產業/個股解讀</li>
+                <li><b>收益模擬</b>：投組模擬及定期定額，輸出投入總額、期末市值、報酬率與走勢</li>
+                <li><b>報表查詢</b>：原始資料快速查詢與下載（CSV / XLSX / PDF）</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+              <div class="subtitle">選單</div>
+              <ul class="mb-0">
+                <li><b>查詢功能</b>：依功能頁選擇參數（代碼、日期、頻率…）進行查詢</li>
+                <li><b>深色模式</b>：記住偏好，提供夜間友善介面</li>
+                <li><b>通知功能</b>：下載成功於通知欄即時提示</li>
+              </ul>
+            </div>
+
+            <div class="mb-4">
+              <div class="subtitle">系統功能</div>
+              <ul class="mb-0">
+                <li><b>自動資料更新</b>：啟動時會自動補齊至最新市場收盤日</li>
+                <li><b>RWD 介面</b>：行動裝置自適應，表格/圖表完整置入卡片</li>
+                <li><b>智慧表頭</b>：欄位依資料鍵名自動生成，數值靠右、百分比自動加 %</li>
+                <li><b>AI 股票洞察</b>：依查詢區間結合新聞來源輸出結構化結論（重點、觀點/驅動因子、風險、下一步）</li>
+                <li><b>即時股價</b>：主頁及選單皆可瀏覽股價，提供良好的 UIUX 體驗</li>
+              </ul>
+            </div>
+
+            <div class="mb-2">
+              <div class="subtitle">技術堆疊</div>
+              <div class="muted mb-1">前端</div>
+              <div class="mb-2">
+                <span class="tech-badge">Vite</span>
+                <span class="tech-badge">ES Modules</span>
+                <span class="tech-badge">Tabulator</span>
+                <span class="tech-badge">ECharts</span>
+                <span class="tech-badge">Choices.js</span>
+                <span class="tech-badge">Flatpickr</span>
+                <span class="tech-badge">Bootstrap</span>
+                <span class="tech-badge">jspdf / jspdf-autotable / xlsx</span>
+              </div>
+              <div class="muted mb-1">後端 / 資料</div>
+              <div class="mb-2">
+                <span class="tech-badge">RESTful API</span>
+                <span class="tech-badge">Node.js + Express</span>
+                <span class="tech-badge">Neon（Postgres）</span>
+                <span class="tech-badge">pg</span>
+                <span class="tech-badge">dotenv</span>
+                <span class="tech-badge">node-cron</span>
+              </div>
+              <div class="muted mb-1">AI / 資料來源</div>
+              <div>
+                <span class="tech-badge">Gemini 1.5</span>
+                <span class="tech-badge">Alpha Vantage</span>
+                <span class="tech-badge">Google News RSS</span>
+                <span class="tech-badge">GNews</span>
+              </div>
+            </div>
+            <div class="container page-body py-3">
+              <div id="mini-ticker" class="mini-ticker-grid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vite module loader -->
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/home-ticker.js"></script>
+</body>
+</html>

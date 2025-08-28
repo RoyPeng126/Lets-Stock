@@ -1,0 +1,136 @@
+/* ===== Dark theme with 6-color palette ===== */
+/* Palette: #000000 #1D1D1D #575757 #707070 #929292 #E3E3E3 */
+:root[data-theme="dark"]{
+  --page-bg:#1D1D1D;
+  --text:#1D1D1D;
+  --card:#E3E3E3;
+  --card-text:#1D1D1D;
+  --border:#707070;
+  --topbar-bg:#000000;
+  --topbar-border:#575757;
+  --muted:#929292;
+}
+
+/* 整頁背景 & 文字 */
+[data-theme="dark"] body,
+[data-theme="dark"] #content-wrapper{
+  background:var(--page-bg) !important;
+  color:var(--text);
+}
+
+/* Container 透明 */
+[data-theme="dark"] .container,
+[data-theme="dark"] .container-fluid,
+[data-theme="dark"] .page-body{ background:transparent !important; }
+
+/* Footer */
+[data-theme="dark"] .footer-main{
+  background:var(--page-bg) !important;
+  color:var(--muted);
+}
+
+/* ===== Topbar ===== */
+[data-theme="dark"] .topbar-apple{
+  background:var(--topbar-bg);
+  border-bottom:1px solid var(--topbar-border);
+}
+[data-theme="dark"] .topbar-apple .navbar-brand{ color:#E3E3E3 !important; }
+[data-theme="dark"] .topbar-apple .nav-link{
+  color:#E3E3E3 !important;
+  background:transparent !important;
+}
+[data-theme="dark"] .topbar-apple .nav-link:hover{
+  background:rgba(227,227,227,.08) !important;
+}
+[data-theme="dark"] #alertsDropdown i{ color:#E3E3E3 !important; }
+
+/* 搜尋按鈕（深色也用黑底亮字） */
+[data-theme="dark"] .topbar-apple .navbar-search .btn{
+  background:#000000 !important;
+  color:#E3E3E3 !important;
+  border:0;
+}
+
+/* ===== 通知面板：深色下仍亮底 ===== */
+[data-theme="dark"] #alertsDropdown + .dropdown-menu{
+  background:#E3E3E3 !important;
+  color:#1D1D1D !important;
+  border:1px solid #929292 !important;
+}
+[data-theme="dark"] .notif-time{ color:#707070; }
+[data-theme="dark"] .notif-text{ color:#1D1D1D; }
+
+/* ===== 卡片（維持亮色） ===== */
+[data-theme="dark"] .apple-card{
+  background:var(--card) !important;
+  color:var(--card-text) !important;
+  border-color:#E3E3E3 !important;
+  box-shadow:none;
+}
+[data-theme="dark"] .apple-card .form-control,
+[data-theme="dark"] .apple-card .form-select,
+[data-theme="dark"] .apple-card .choices__inner{
+  background:var(--card) !important;
+  color:var(--card-text) !important;
+  border-color:var(--border) !important;
+}
+
+/* ===== 按鈕：沿用 --btn ===== */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .apple-btn{
+  background:var(--btn) !important;
+  border-color:var(--btn) !important;
+  color:#fff !important;
+}
+
+[data-theme="dark"] .topbar-clock{ color:#E3E3E3; }
+
+/* ===== 深色主題：手機折疊選單 ===== */
+@media (max-width: 1120px){
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show{
+    background:var(--card);
+    border:1px solid var(--border);
+  }
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show .nav-link,
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show .dropdown-item{
+    color:var(--card-text) !important;
+    background:transparent !important;
+  }
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show .nav-link:hover{
+    background:rgba(0,0,0,.06) !important;
+  }
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show .dropdown-menu{
+    background:var(--card) !important;
+    color:var(--card-text) !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show #alertsDropdown i,
+  [data-theme="dark"] .topbar-apple .navbar-collapse.show .topbar-clock{
+    color:var(--card-text) !important;
+  }
+}
+
+/* 漢堡按鈕 */
+[data-theme="dark"] .topbar-apple .navbar-toggler{
+  border-color:var(--topbar-border);
+  color:#E3E3E3;
+}
+[data-theme="dark"] .topbar-apple .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===== 子選單 hover（亮卡片底） ===== */
+[data-theme="dark"] .topbar-apple .dropdown-menu .dropdown-item{
+  color:var(--card-text) !important;
+  background:transparent !important;
+  transition:background-color .15s ease;
+}
+[data-theme="dark"] .topbar-apple .dropdown-menu .dropdown-item:hover,
+[data-theme="dark"] .topbar-apple .dropdown-menu .dropdown-item:focus{
+  background:rgba(0,0,0,.08) !important;
+  color:var(--card-text) !important;
+}
+/* ===== 垂直跑馬燈（固定一行高；避免遮擋） ===== */
+[data-theme="dark"] #topnav-marquee .sym,
+[data-theme="dark"] #topnav-marquee .price { color: #E3E3E3; }

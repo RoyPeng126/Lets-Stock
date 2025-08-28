@@ -1,0 +1,6 @@
+/* default.css */
+.bg-gradient-brand {
+  background: linear-gradient(45deg, rgb(0, 64, 150), rgb(22, 119, 230));
+  color: white;
+}
+

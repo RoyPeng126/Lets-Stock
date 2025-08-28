@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+dist/
+.vite/
+temp-dist/
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# .VSCodeCounter
+.vsCodeCounter/
+
+# .History
+.history/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env*
+!.env
+
+# Logs
+logs/
+*.log
+
+# Others
+coverage/
+frontend.tar.gz
+temp_backend/
+backend_package.tar.gz
+instantclient-basic-linux.x64-11.2.0.4.0.zip

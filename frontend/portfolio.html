@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>投組模擬</title>
+</head>
+<body id="page-top">
+<div id="wrapper" class="d-flex">
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div id="topbar-placeholder"></div>
+
+      <div class="container page-body py-4">
+        <div class="apple-card">
+          <h2 class="page-title mb-4">投組模擬</h2>
+
+          <!-- 參數區 -->
+          <div id="params" class="mb-3">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="symbols" class="form-label">股票代碼（可複選）</label>
+                <select id="symbols" class="form-select" multiple>
+                  <option value="AAPL" selected>AAPL</option>
+                  <option value="MSFT" selected>MSFT</option>
+                  <option value="AMZN" selected>AMZN</option>
+                  <option value="GOOGL" selected>GOOGL</option>
+                  <option value="TSLA" selected>TSLA</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="from" class="form-label">起</label>
+                <input id="from" type="text" class="form-control" placeholder="請輸入日期..." />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="to" class="form-label">迄</label>
+                <input id="to" type="text" class="form-control" placeholder="請輸入日期..." />
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex align-items-center gap-2">
+                  <button id="btn-equal-weights" class="btn btn-outline-secondary btn-sm">平均配重</button>
+                  <small class="text-muted">（可自行在下方調整各股權重，總和=100%）</small>
+                </div>
+                <div id="weightList" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mb-3">
+            <button id="queryBtn" class="btn btn-primary">模擬</button>
+          </div>
+
+          <!-- 指標卡 -->
+          <div id="metrics" class="row g-3"></div>
+
+          <!-- 圖表 -->
+          <div id="chart-portfolio" style="height:380px;margin-top:16px;"></div>
+
+          <!-- 明細表 -->
+          <h5 class="mt-4 mb-2">明細</h5>
+          <div class="card-table-wrap">   <!-- 新增這層 -->
+          <div id="lab-table"></div>    <!-- 去掉 min-width:max-content --></div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loadingOverlay" class="position-fixed top-0 start-0 w-100 h-100 d-none bg-light bg-opacity-50 text-center" style="z-index:9999;padding-top:20%;">
+          <div class="spinner-border text-primary" role="status"></div>
+          <div class="mt-3 fs-5">運算中，請稍候...</div>
+          <button id="cancelQuery" class="btn btn-outline-secondary mt-3">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/src/portfolio.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
