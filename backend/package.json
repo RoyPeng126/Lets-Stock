@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "ingest:av": "node scripts/ingest-av.js",
-    "ingest:av:1y": "node scripts/ingest-av-1y.js"
+    "ingest:av:1y": "node scripts/ingest-av-1y.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -37,7 +39,8 @@
     "@eslint/markdown": "^6.6.0",
     "eslint": "^9.30.1",
     "eslint-plugin-vue": "^10.3.0",
-    "globals": "^16.3.0"
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10"
   },
   "_moduleAliases": {
     "@config": "config",
