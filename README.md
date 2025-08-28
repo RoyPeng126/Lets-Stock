@@ -201,12 +201,9 @@ npm run ingest:av:1y
 
 ## 🪤 常見問題（Troubleshooting）
 
-- **`footer-placeholder` 錯誤**：每頁都需 `<div id="footer-placeholder"></div>`  
-- **表格/ECharts 在手機溢出**：外層用 `.apple-card`、表格再包 `.apple-table-wrap`，ECharts 容器設固定高度  
 - **`/api/ai/stock-insights/gemini-news` 404**：檢查 `routes/ai.js` 是否掛到 `apiRouter`，且 `backend/index.js` 有載入  
 - **AI 回傳「模型未回傳合法 JSON」**：確認使用 `jsonrepair` 與降溫 `temperature`  
 - **Node 無 `fetch`**：請用 Node 18+（內建 fetch）；舊版需安裝 `node-fetch`  
-- **Alpha Vantage 429**：減少同時 symbols 或拉長 cron 間隔  
 - **PowerShell 用 `curl` 失敗**：改用 `Invoke-WebRequest`、Postman 或 WSL
 
 ---
@@ -220,12 +217,4 @@ npm run build        # 產出 dist/
 - 若放子路徑（例如 `/lets-stock/`），請設定 `vite.config.mjs` 的 `base`，並確保伺服器以該子路徑對外服務
 
 ---
-
-## 🧪 快速驗收清單
-
-- [ ] `company.html` 查詢能回資料、匯出能跳右下角通知  
-- [ ] 「AI 解讀（含時事）」能顯示**逐檔觀點**與**新聞列表**（可點網址）  
-- [ ] `dca.html` 能成功模擬並繪圖、表格高度與其他區塊一致  
-- [ ] `report.html` 有 `#report-table` 與 `#footer-placeholder`，匯出成功有通知  
-- [ ] Topnav：深色模式、通知、時鐘、搜尋（手機漢堡後第一列）皆可用
 
