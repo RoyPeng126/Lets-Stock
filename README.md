@@ -66,9 +66,9 @@ project-root/
 ### 1) 前端
 
 ```bash
-npm i
-npm run dev           # Vite 開發伺服器（預設 5173）
-npm run build         # 產出 dist/
+cd frontend
+npm i -D vite
+npm run dev
 ```
 
 > 若網站部署在子路徑（例如 `/lets-stock/`），請在 `vite.config.mjs` 設定：
@@ -89,8 +89,7 @@ export default defineConfig({
 
 ```bash
 cd backend
-npm i
-cp .env.example .env  # 若有樣本；否則自行建立 .env（見下）
+npm i -D
 npm run dev           # nodemon（若有設定）
 # 或
 node index.js
