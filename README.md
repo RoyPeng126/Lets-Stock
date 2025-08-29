@@ -95,10 +95,14 @@ npm run dev           # nodemon（若有設定）
 node index.js
 ```
 
-**.env 範例：**
+**.env 範例(可直接複製貼上範例內容，但仍需於 ./backend 目錄下建立 .env 檔，並填入自行申請的 API Key)：**
 ```
+# 使用者
+APP_LOGIN_ACCOUNT=自行設定
+APP_LOGIN_PASSWORD=自行設定
+
 # 資料庫（Neon）
-DATABASE_URL=postgres://<user>:<pass>@<host>/<db>?sslmode=require
+DATABASE_URL="postgresql://neondb_owner:npg_GYb1Z0OCzESs@ep-withered-queen-a1l5fy8t-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 # 股價來源
 ALPHAVANTAGE_API_KEY=你的AVKey
@@ -108,13 +112,36 @@ GOOGLE_GENAI_API_KEY=你的GeminiKey
 GNEWS_API_KEY=你的GNewsKey  # 可空；將 fallback 至 Google News RSS
 
 # Web
-PORT=3000
+PORT=3002
 CORS_ORIGIN=http://localhost:5173
 
 # 排程（可選）
 CRON_ENABLED=true
 CRON_SCHEDULE=0 4 * * 2-6   # 週二~六每天 04:00 拉前一日資料
+
+NEWS_LOOKBACK_DAYS=7
+NEWS_PER_SYMBOL=6
+
+# 你現有的 app secret/TTL 都可留
+WEB_SECRET=secret_for_dev_env_WEB
+WEB_TTL=2h
+
+# 要抓哪些代號（逗號分隔）
+INGEST_SYMBOLS=AAPL,MSFT,AMZN,GOOGL,TSLA
+
+
+# 回補天數（僅為本程式內的篩選；實際會向 AV 拉 compact=最近~100 天）
+INGEST_DAYS_BACK=400
+
+
+# 開啟排程（true 才會自動跑；否則你可用 CLI 手動執行）
+ENABLE_INGEST_CRON=true
 ```
+**申請 API KEY 網址:**
+- Alpha Vantage API KEY : https://www.alphavantage.co/support/#api-key
+- Gemini API KEY : https://aistudio.google.com/app/apikey
+- GNews API KEY : https://gnews.io/
+
 
 ---
 
