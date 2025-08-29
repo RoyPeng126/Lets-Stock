@@ -137,7 +137,7 @@ INGEST_DAYS_BACK=400
 # 開啟排程（true 才會自動跑；否則你可用 CLI 手動執行）
 ENABLE_INGEST_CRON=true
 ```
-**申請 API KEY 網址:**
+**申請 API KEY 網址 :**
 - Alpha Vantage API KEY : https://www.alphavantage.co/support/#api-key
 - Gemini API KEY : https://aistudio.google.com/app/apikey
 - GNews API KEY : https://gnews.io/
