@@ -27,9 +27,13 @@ temp-dist/
 .DS_Store
 Thumbs.db
 
-# Env files
-.env*
-!.env
+# Env files — do NOT track real secrets
+.env
+.env.*
+*.env
+**/.env
+**/*.env
+!.env.example
 
 # Logs
 logs/
