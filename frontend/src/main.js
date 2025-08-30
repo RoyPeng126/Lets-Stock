@@ -22,7 +22,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import '@/styles/default.css';
 import '@/styles/custom.css';
 import '@/styles/theme.css';
-import './topnav-marquee.js';
+import { initTopnavMarquee } from './topnav-marquee.js';
 
 const urlParams = new URLSearchParams(location.search);
 const debugFlag = urlParams.get('debug') === 'true';
@@ -33,7 +33,7 @@ fetch(`${import.meta.env.BASE_URL}layout/topnav.html`)
   .then(html => {
     const mount = document.getElementById('topbar-placeholder') || document.body;
     mount.insertAdjacentHTML('afterbegin', html);
-
+    initTopnavMarquee();
     // 通知 / 使用者區
     renderNotifs();
     bindNotifMenu();
@@ -50,7 +50,7 @@ fetch(`${import.meta.env.BASE_URL}layout/topnav.html`)
     // 啟用 Bootstrap dropdown
     $('#userDropdown').dropdown();
     $('.dropdown-toggle').dropdown();
-
+ 
     // ✅ 這裡再啟動「時鐘」與「搜尋」
     startTopbarClock({
       el: '#topbar-clock',
