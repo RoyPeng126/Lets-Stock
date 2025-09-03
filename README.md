@@ -78,7 +78,6 @@ export default defineConfig({
 })
 ```
 專案內透過 `import.meta.env.BASE_URL` 動態載入 `layout/topnav.html` 等，打包後也能正確取路徑。
-```
 
 ### 2) 後端
 
